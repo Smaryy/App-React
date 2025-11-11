@@ -1,10 +1,10 @@
-interface TodoItemProps {
+interface TodoItemProps { // Definisce le proprietà di un singolo Todo
   todo: {
     id: number;
     text: string;
     completed: boolean;
   };
-  onToggle: (id: number) => void;
+  onToggle: (id: number) => void; // Funzione per cambiare lo stato di completamento del todo
 }
 
 function TodoItem({ todo, onToggle }: TodoItemProps) {

@@ -1,12 +1,12 @@
-interface TodoFilterProps {
+interface TodoFilterProps { // Definisce le proprietà del filtro
   filter: 'all' | 'active' | 'completed';
-  onFilterChange: (filter: 'all' | 'active' | 'completed') => void;
+  onFilterChange: (filter: 'all' | 'active' | 'completed') => void; // Funzione per cambiare il filtro
 }
-function TodoFilter({ filter, onFilterChange }: TodoFilterProps) {
+function TodoFilter({ filter, onFilterChange }: TodoFilterProps) { // Componente per filtrare i todo
   return (
     <div>
       <button 
-        onClick={() => onFilterChange('all')}
+        onClick={() => onFilterChange('all')} 
         className={filter === 'all' ? 'active' : ''}
       >
         Tutti

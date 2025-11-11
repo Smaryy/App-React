@@ -1,5 +1,5 @@
-import TodoItem from './TodoItem';
-interface TodoListProps {
+import TodoItem from './TodoItem'; // Importa il componente TodoItem per visualizzare ogni singolo todo
+interface TodoListProps { // Definisce le proprietà della lista dei Todo
   todos: {
     id: number;
     text: string;
@@ -8,7 +8,7 @@ interface TodoListProps {
   onToggleTodo: (id: number) => void;
 }
 
-function TodoList({ todos, onToggleTodo }: TodoListProps) {
+function TodoList({ todos, onToggleTodo }: TodoListProps) { // Componente per visualizzare la lista dei Todo
   return (
     <ul>
       {todos.map(todo => (

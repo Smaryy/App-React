@@ -4,14 +4,14 @@ import TodoForm from './TodoForm';
 import TodoItem from './TodoItem';
 import TodoList from './TodoList';
 
-interface Todo {
+interface Todo { // Definisce la struttura di un Todo
   id: number;
   text: string;
   completed: boolean;
 }
-function TodoApp() {
+function TodoApp() { // Componente principale dell'app Todo
   const [todos, setTodos] = useState<Todo[]>([]); //useState per gestire lo stato dei todo
-  const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all');
+  const [filter, setFilter] = useState<'all' | 'active' | 'completed'>('all'); // Stato per il filtro dei todo
 
   const addTodo = (text: string) => {
     setTodos(prev => [...prev, { // setTodos aggiunge un nuovo todo all'array
@@ -35,7 +35,7 @@ function TodoApp() {
   
   return (
     <div>
-      <TodoForm onAddTodo={addTodo} />
+      <TodoForm onAddTodo={addTodo} /> 
       <TodoFilter filter={filter} onFilterChange={setFilter} />
       <TodoList todos={filteredTodos} onToggleTodo={toggleTodo} />
     </div>
